@@ -1,0 +1,8 @@
+.topBar{
+    background-color: yellow;
+    color: black;
+    padding: .5rem 1.5rem .5rem 4.5rem;
+    font-size: 8rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
