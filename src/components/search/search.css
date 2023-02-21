@@ -2,21 +2,27 @@
 .searchButton:hover {
   text-decoration: none;
 }
-.searchBox {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.searchWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 3rem;
 }
-
-.searchText{
-    border-color: black;
-    border-radius: 5rem;
-    border-width: .5rem;
-    outline: none;
-    width: 40rem;
-    padding: 2rem;
-    box-shadow: 0 2rem 1rem -1.5rem rgba(0, 0, 0, 0.5);
+.searchHead {
+  font-size: 6rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 0 0 3.5rem 0;
+}
+.searchText {
+  border-color: black;
+  border-radius: 5rem;
+  border-width: 0.5rem;
+  outline: none;
+  width: 40rem;
+  padding: 2rem;
+  box-shadow: 0 2rem 1rem -1.5rem rgba(0, 0, 0, 0.5);
 }
 .searchText:focus {
   outline: none;
@@ -28,8 +34,7 @@
   color: blue;
   background-color: #fff;
   position: absolute;
-  right: 1rem;
-  display: grid;
-  place-items: center;
+  right: 50.5rem;
+  top: 11.5rem;
   border-radius: 50%;
 }

@@ -1,0 +1,49 @@
+.sortButton {
+  background-color: #3498db;
+  color: white;
+  padding: 1.6rem;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}
+.contentTitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 6rem;
+}
+.sortButton:hover,
+.sortButton:focus {
+  background-color: #2980b9;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem 0 5rem;
+  margin-top: 14rem;
+}
+
+#dropContent {
+  display: none;
+  background-color: #f1f1f1;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0rem 0.8rem 1.6rem 0rem rgba(0, 0, 0, 0.2);
+}
+
+#dropContent a {
+  color: black;
+  padding: 1.2rem 1.6rem;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+#dropContent a:hover {
+  background-color: #ddd;
+}
+#caret {
+  padding-left: 1rem;
+}

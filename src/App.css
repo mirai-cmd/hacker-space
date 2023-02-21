@@ -5,4 +5,9 @@
 }
 html{
     font-size: 62.5%;
+    color: black;
+    background-color: white;
+}
+a{
+    text-decoration: none;
 }

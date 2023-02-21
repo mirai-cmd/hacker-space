@@ -1,8 +1,22 @@
-.topBar{
-    background-color: yellow;
-    color: black;
-    padding: .5rem 1.5rem .5rem 4.5rem;
+.container{
+    position: relative;
+    top: -10rem;
+}
+.title{
     font-size: 8rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
+    text-align: left;
 }
+.toggleLightButton,.toggleDarkButton{
+    font-size: 5.5rem;
+    border: none;
+    color: white;
+    background-color: rgb(32, 40, 63);
+    cursor: pointer;
+}
+.toggleDarkButton{
+    background-color: white;
+    color: black;
+}
+/*rgb(89, 165, 232)
+/*rgb(32, 40, 63)

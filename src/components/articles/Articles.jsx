@@ -8,18 +8,18 @@ export default function Articles({ items }) {
     <Container
       sx={{
         padding: "1.5rem",
-        margin: "3.5rem 0 0 12rem",
+        margin: "8.5rem 0 0 12rem",
       }}
     >
       <Grid
         container
-        spacing={7}
         columnSpacing={{ xs: 1, sm: 2, md: 7 }}
         rowSpacing={{ xs: 1, sm: 2, md: 5 }}
+        sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}
       >
         {items.map((item) => {
           return(
-          <Grid item>
+          <Grid item key={item.title}>
             <Article item={item} />
           </Grid>)
         })}
