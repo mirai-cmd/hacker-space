@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function Article({ item }) {
+export default function Article({item}) {
   return (
     <div className="article">
       <Card

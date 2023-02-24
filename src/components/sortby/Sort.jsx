@@ -1,23 +1,26 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./sort.css";
-export default function Sort({ search, setSearch }) {
+import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
+export default function Sort() {
+  const state = useContext(NewsContext);
+  const dispatch=useContext(NewsDispatchContext);
   const handleDateClick = () => {
-    let sortByDate = [...search].sort((a, b) => b.publishedAt.slice(0,10).localeCompare(a.publishedAt.slice(0,10)))
-    setSearch(sortByDate);
+    let sortByDate = [...state.search].sort((a, b) => b.publishedAt.slice(0,10).localeCompare(a.publishedAt.slice(0,10)))
+    dispatch({type:"SEARCH_ITEMS",search: sortByDate});
   };
   const handleSourceClick = () => {
-    let sortBySource = [...search].sort((a, b) => b.source["name"] < a.source["name"])
-    setSearch(sortBySource);
+    let sortBySource = [...state.search].sort((a, b) => b.source["name"] < a.source["name"])
+    dispatch({type:"SEARCH_ITEMS",search: sortBySource});
   };
-  const handleClick = () => {
-    var dropdown = document.getElementById("dropContent");
+  const handleDropdownClick = () => {
+    let dropdown = document.getElementById("dropContent");
     if (dropdown.style.display === "none") dropdown.style.display = "block";
     else dropdown.style.display = "none";
   };
   window.onclick = function (event) {
     if (!event.target.matches(".sortButton")) {
       var dropdown = document.getElementById("dropContent");
-      dropdown.style.display = "none";
+      dropdown.style.display = "hidden";
     }
   };
   return (
@@ -25,10 +28,10 @@ export default function Sort({ search, setSearch }) {
       <div className="container">
         <span className="contentTitle">Recent hacks...</span>
         <div className="wrapper">
-          <button className="sortButton" onClick={handleClick}>
+          <button className="sortButton" onClick={handleDropdownClick}>
             Sort by
           </button>
-          <div id="dropContent">
+          <div id="dropContent" >
             <a onClick={handleDateClick}>Date</a>
             <a onClick={handleSourceClick}>Source</a>
           </div>

@@ -1,28 +1,28 @@
-import React,{useState} from "react";
+import React,{useContext} from "react";
 import "./topbar.css";
-
+import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
 export default function TopBar() {
-  const [darkTheme,setDarkTheme] = useState(false);
+  const state = useContext(NewsContext);
+  const dispatch=useContext(NewsDispatchContext);
   const toggleLightClick = () => {
     let htmlContent = document.querySelector('html');
     htmlContent.style.backgroundColor = "white";
-    setDarkTheme(!darkTheme);
+    dispatch({type:"TOGGLE_THEME"});
   };
   const toggleDarkClick = () => {
     let htmlContent = document.querySelector('html');
     htmlContent.style.backgroundColor = "rgb(32, 40, 63)";
     htmlContent.style.color = "rgb(89, 165, 232)";
-
-    setDarkTheme(!darkTheme);
+    dispatch({type:"TOGGLE_THEME"});
   };
 
   return (
     <div className="container">
       <span className="title">HackerSpace</span>
-      {darkTheme ? <button className="toggleLightButton" onClick={toggleLightClick}>
-        <i class="fa-solid fa-sun "></i>
+      {state.darkTheme ? <button className="toggleLightButton" onClick={toggleLightClick}>
+        <i className="fa-solid fa-sun "></i>
       </button>:<button className="toggleDarkButton" onClick={toggleDarkClick}>
-        <i class="fa-solid fa-moon"></i>
+        <i className="fa-solid fa-moon"></i>
       </button>}
     </div>
   );
