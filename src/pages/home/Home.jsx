@@ -17,7 +17,7 @@ export default function Home() {
   const fetchAPI = async () => {
     try {
       const response = await axios.get(
-        `https://newsapi.org/v2/everything?q=hackers AND cybersecurity&apiKey=37ad1cab6d2f4e2a9c243f8bdb9f499b`
+        `https://newsapi.org/v2/everything?q=hackers AND cybersecurity&apiKey=YOUR_API_KEY`
       );
       dispatch({ type: "FETCH_SUCCESS", payload: response.data.articles });
       dispatch({ type: "SEARCH_ITEMS", payload: response.data.articles });
