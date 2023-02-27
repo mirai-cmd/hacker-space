@@ -1,8 +1,7 @@
+import React,{ useContext } from "react";
 import Article from "../article/Article";
-import React from "react";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
-import { useContext } from "react";
 import { NewsContext} from "../../context/NewsContext";
 
 export default function Articles() {
@@ -11,7 +10,7 @@ export default function Articles() {
     <Container
       sx={{
         padding: "1.5rem",
-        margin: "8.5rem 0 0 12rem",
+        margin: "5rem 0 0 12rem",
       }}
     >
       <Grid

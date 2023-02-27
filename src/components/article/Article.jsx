@@ -9,6 +9,7 @@ export default function Article({item}) {
   return (
     <div className="article">
       <Card
+      elevation={4}
         sx={{
           width: 745,
           maxHeight: 390,

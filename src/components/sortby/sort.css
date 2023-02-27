@@ -1,3 +1,10 @@
+.sortContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem 0 5rem;
+  margin-top: 25rem;
+}
 .sortButton {
   background-color: #3498db;
   color: white;
@@ -15,15 +22,6 @@
   background-color: #2980b9;
 }
 
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5rem 0 5rem;
-  margin-top: 14rem;
-}
 
 #dropContent {
   display: none;

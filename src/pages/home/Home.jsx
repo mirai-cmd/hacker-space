@@ -4,9 +4,9 @@ import TopBar from "../../components/topbar/TopBar";
 import Articles from "../../components/articles/Articles";
 import Header from "../../components/header/Header";
 import Sort from "../../components/sortby/Sort";
-import Search from "../../components/search/Search";
 import { reducer } from "../../reducers/reducer";
 import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
+
 
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, {
@@ -17,7 +17,7 @@ export default function Home() {
   const fetchAPI = async () => {
     try {
       const response = await axios.get(
-        `https://newsapi.org/v2/everything?q=hackers AND cybersecurity&apiKey=YOUR_API_KEY`
+        `https://newsapi.org/v2/everything?q=hackers AND cybersecurity&apiKey=37ad1cab6d2f4e2a9c243f8bdb9f499b`
       );
       dispatch({ type: "FETCH_SUCCESS", payload: response.data.articles });
       dispatch({ type: "SEARCH_ITEMS", payload: response.data.articles });
@@ -33,7 +33,6 @@ export default function Home() {
       <NewsDispatchContext.Provider value={dispatch}>
         <TopBar />
         <Header />
-        <Search />
         <Sort />
         <Articles />
       </NewsDispatchContext.Provider>
