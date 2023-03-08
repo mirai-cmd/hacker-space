@@ -16,6 +16,7 @@
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-paginate": "^8.1.4",
     "react-scroll": "^1.8.9"
   },
   "devDependencies": {

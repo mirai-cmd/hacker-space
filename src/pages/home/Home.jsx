@@ -7,7 +7,6 @@ import Sort from "../../components/sortby/Sort";
 import { reducer } from "../../reducers/reducer";
 import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
 
-
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, {
     items: [],

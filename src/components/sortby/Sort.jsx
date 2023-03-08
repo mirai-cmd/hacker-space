@@ -1,15 +1,16 @@
 import React,{useContext} from "react";
 import "./sort.css";
 import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
+import { color } from "@mui/system";
 export default function Sort() {
-  const state = useContext(NewsContext);
+  const {search,darkTheme}= useContext(NewsContext);
   const dispatch=useContext(NewsDispatchContext);
   const handleDateClick = () => {
-    let sortByDate = [...state.search].sort((a, b) => b.publishedAt.slice(0,10).localeCompare(a.publishedAt.slice(0,10)))
+    let sortByDate = [...search].sort((a, b) => b.publishedAt.slice(0,10).localeCompare(a.publishedAt.slice(0,10)))
     dispatch({type:"SEARCH_ITEMS",payload: sortByDate});
   };
   const handleSourceClick = () => {
-    let sortBySource = [...state.search].sort((a, b) => b.source["name"] < a.source["name"])
+    let sortBySource = [...search].sort((a, b) => b.source["name"] < a.source["name"])
     dispatch({type:"SEARCH_ITEMS",payload: sortBySource});
   };
   const handleDropdownClick = () => {
@@ -26,7 +27,7 @@ export default function Sort() {
   return (
     <>
       <div className="sortContainer">
-        <span className="contentTitle">Recent hacks...</span>
+        <span className="contentTitle" style={{ color: darkTheme?"white":"black"}}>Recent hacks...</span>
         <div className="wrapper">
           <button className="sortButton" onClick={handleDropdownClick}>
             Sort by

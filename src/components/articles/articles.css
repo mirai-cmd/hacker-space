@@ -1,0 +1,22 @@
+.paginateContainer{
+    width: 80%;
+    height: 4rem;
+    margin-top: 2rem;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paginateContainer a{
+    padding: 1rem;
+    margin: 0.8rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #489ed7;
+    color: #489ed7;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.paginateContainer a:hover{
+    background-color: #489ed7;
+    color: white;
+}

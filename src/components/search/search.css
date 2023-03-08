@@ -36,5 +36,6 @@
   position: absolute;
   right: 50.5rem;
   top: 11.5rem;
+  border: none;
   border-radius: 50%;
 }
