@@ -1,7 +1,29 @@
+
+.loading{
+    font-size: 6rem;
+    margin-top: 4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    animation: infinite 2s pulsing;
+    -webkit-animation: infinite 2s pulsing;
+    -moz-animation: infinite 2s pulsing;
+}
+@keyframes pulsing {
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+    
+}
 .paginateContainer{
     width: 80%;
     height: 4rem;
-    margin-top: 2rem;
+    margin: 2rem 0 2rem 9rem;
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -11,12 +33,20 @@
     padding: 1rem;
     margin: 0.8rem;
     border-radius: 0.5rem;
-    border: 0.1rem solid #489ed7;
-    color: #489ed7;
+    border: 0.1rem solid #4d51d2;
+    color: #4d51d2;
     font-size: 1.5rem;
     cursor: pointer;
 }
-.paginateContainer a:hover{
-    background-color: #489ed7;
+.paginateContainer a:not(.prev a,.next a):hover{
+    background-color: #4d51d2;
+    color: white;
+}
+.pageNumActive a{
+    background-color: #4d51d2;
+    color: white;
+}
+.prev a, .next a{
+    background-color: #4d51d2;
     color: white;
 }

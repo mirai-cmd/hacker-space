@@ -6,7 +6,7 @@
   margin-top: 25rem;
 }
 .sortButton {
-  background-color: #3498db;
+  background-color: #4d51d2;
   color: white;
   padding: 1.6rem;
   font-size: 1.6rem;
@@ -17,8 +17,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 6rem;
 }
-.sortButton:hover,
-.sortButton:focus {
+.sortButton:hover {
   background-color: #2980b9;
 }
 

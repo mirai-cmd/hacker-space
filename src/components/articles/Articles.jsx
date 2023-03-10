@@ -7,7 +7,7 @@ import ReactPaginate from "react-paginate";
 import './articles.css';
 export default function Articles() {
   const [pageNum, setPageNum] = useState(0);
-  const { search } = useContext(NewsContext);
+  const { search,loading } = useContext(NewsContext);
   const articlesPerPage = 10;
   const visited = pageNum * articlesPerPage;
   const pageCount = Math.ceil(search.length / articlesPerPage);
@@ -17,12 +17,24 @@ export default function Articles() {
     setPageNum(selected);
   };
   return (
-    <Container
+    loading? <div className="loading">Loading...</div>:(<Container
       sx={{
         padding: "1.5rem",
         margin: "5rem 0 0 12rem",
       }}
     >
+      <ReactPaginate
+        previousLabel={"Prev"}
+        nextLabel={"Next"}
+        breakLabel={"..."}
+        pageCount={pageCount}
+        onPageChange={handlePageChange}
+        containerClassName={"paginateContainer"}
+        activeClassName={"pageNumActive"}
+        disabledClassName={"buttonsDisabled"}
+        previousClassName={"prev"}
+        nextClassName={"next"}
+      />
       <Grid
         container
         columnSpacing={{ xs: 1, sm: 2, md: 7 }}
@@ -34,38 +46,15 @@ export default function Articles() {
           alignItems: "center",
         }}
       >
-        <ReactPaginate
-          previousLabel={"Prev"}
-          nextLabel={"Next"}
-          breakLabel={"..."}
-          pageCount={pageCount}
-          onPageChange={handlePageChange}
-          containerClassName={"paginateContainer"}
-          activeClassName={"pageNumActive"}
-          disabledClassName={"pageNumDisabled"}
-          nextLinkClassName={"next"}
-          previousLinkClassName={"prev"}
-        />
         {articles.map((item) => {
           return (
-            <Grid item key={item.title}>
+            <Grid item key={item.name}>
               <Article item={item} />
             </Grid>
           );
         })}
-        <ReactPaginate
-          previousLabel={"Prev"}
-          nextLabel={"Next"}
-          breakLabel={"..."}
-          pageCount={pageCount}
-          onPageChange={handlePageChange}
-          containerClassName={"paginateContainer"}
-          activeClassName={"pageNumActive"}
-          disabledClassName={"pageNumDisabled"}
-          nextLinkClassName={"next"}
-          previousLinkClassName={"prev"}
-        />
       </Grid>
     </Container>
-  );
+  )
+  )
 }

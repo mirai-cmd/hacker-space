@@ -6,23 +6,41 @@ import Header from "../../components/header/Header";
 import Sort from "../../components/sortby/Sort";
 import { reducer } from "../../reducers/reducer";
 import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
-
+import './home.css';
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, {
     items: [],
     search: [],
+    loading: true,
     darkTheme: false,
   });
   const fetchAPI = async () => {
-    try {
-      const response = await axios.get(
-        `https://newsapi.org/v2/everything?q=hackers AND cybersecurity&apiKey=37ad1cab6d2f4e2a9c243f8bdb9f499b`
-      );
-      dispatch({ type: "FETCH_SUCCESS", payload: response.data.articles });
-      dispatch({ type: "SEARCH_ITEMS", payload: response.data.articles });
-    } catch (error) {
-      console.log(error);
-    }
+    const options = {
+      method: "GET",
+      url: "https://bing-news-search1.p.rapidapi.com/news/search",
+      params: {
+        q: "hackers AND hack AND cybersecurity AND cybercrime AND passwords AND hacking AND vulnerability AND darkweb",
+        safeSearch: "Off",
+        textFormat: "Raw",
+        count: "100",
+      },
+      headers: {
+        "X-BingApis-SDK": "true",
+        "X-RapidAPI-Key": "3d7082cc5emsh696a274e23386d9p1f27c6jsnc1cf1570245a",
+        "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
+      },
+    };
+
+    await axios
+      .request(options)
+      .then(function (response) {
+        dispatch({ type: "FETCH_SUCCESS", payload: response.data.value });
+        dispatch({ type: "SEARCH_ITEMS", payload: response.data.value });
+        dispatch({type:"LOADING"});
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   };
   useEffect(() => {
     fetchAPI();

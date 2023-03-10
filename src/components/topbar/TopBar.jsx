@@ -19,8 +19,8 @@ export default function TopBar() {
     else {
       button.style.backgroundColor="black";
       topbar.style.backgroundColor = "black";
-      html.style.backgroundColor = "white";
-      topbar.style.color = "white";
+      html.style.backgroundColor = "lightblue";
+      topbar.style.color = "lightblue";
     }
   };
 

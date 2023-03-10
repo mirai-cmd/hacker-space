@@ -19,10 +19,10 @@ export default function Article({item}) {
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" fontSize={15}>
-            {item.title}
+            {item.name}
           </Typography>
           <Typography gutterBottom variant="h5" component="div" fontSize={12}>
-            {item.source["name"]} | {item.publishedAt}
+            {item.provider[0].name} | {item.datePublished}
           </Typography>
           <Typography
             variant="p"

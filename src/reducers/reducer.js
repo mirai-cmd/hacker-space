@@ -6,6 +6,7 @@ export const reducer = (state, action) => {
       return { ...state, search: action.payload };
     case "TOGGLE_THEME":
       return {...state, darkTheme: !state.darkTheme};
+    case "LOADING": return{...state, loading: !state.loading};
     default:
       return state;
   }
