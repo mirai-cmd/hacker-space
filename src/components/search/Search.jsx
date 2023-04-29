@@ -23,9 +23,6 @@ export default function Search() {
         placeholder="Search by news title..."
         onChange={handleSearchChange}
       />
-      <button className="searchButton">
-        <i className="fa-solid fa-magnifying-glass " />
-      </button>
     </div>
   );
 }

@@ -1,7 +1,3 @@
-.searchButton,
-.searchButton:hover {
-  text-decoration: none;
-}
 .searchWrapper {
   position: relative;
   display: flex;
@@ -27,15 +23,23 @@
 .searchText:focus {
   outline: none;
 }
-.searchButton {
-  width: 5rem;
-  height: 5rem;
-  font-size: 2rem;
-  color: blue;
-  background-color: #fff;
-  position: absolute;
-  right: 50.5rem;
-  top: 11.5rem;
-  border: none;
-  border-radius: 50%;
+@media (max-width: 998px) {
+  .searchHead {
+    font-size: 3.3rem;
+  }
+  .searchText{
+    width: 30rem;
+    border-width: 0.2rem;
+    padding: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .searchHead {
+    font-size: 3.3rem;
+  }
+  .searchText{
+    width: 30rem;
+    border-width: 0.2rem;
+    padding: 1.2rem;
+  }
 }

@@ -13,6 +13,7 @@
   border: none;
   cursor: pointer;
 }
+
 .contentTitle{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 6rem;
@@ -20,7 +21,6 @@
 .sortButton:hover {
   background-color: #2980b9;
 }
-
 
 #dropContent {
   display: none;
@@ -43,4 +43,41 @@
 }
 #caret {
   padding-left: 1rem;
+}
+@media(max-width:998px){
+  .sortContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 3.2rem;
+  }
+  .contentTitle{
+    font-size: 4rem;
+  }
+  .sortContainer{
+    padding: 0rem 5rem 0rem 2rem;
+  }
+  .sortButton{
+    padding: 0.8rem;
+    width: 8rem;
+  }
+  
+}
+@media(max-width:768px){
+  .sortContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 3.2rem;
+  }
+  .contentTitle{
+    font-size: 4rem;
+  }
+  .sortContainer{
+    padding: 0rem 5rem 0rem 2rem;
+  }
+  .sortButton{
+    padding: 0.8rem;
+    width: 8rem;
+  }
 }

@@ -1,41 +1,64 @@
-.topBarContainer{
-    width: 100%;
-    color: white;
-    background-color: black;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding:1.5rem 4rem 1.5rem 4rem;
-    z-index: 1;
+.topBarContainer {
+  width: 100%;
+  color: white;
+  background-color: black;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem 1.5rem 4rem;
+  z-index: 1;
 }
-.title{
-    font-size: 6rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.title {
+  font-size: 6rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-.topBar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 4rem;
+.topBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
 }
-.homeLink{
-    font-size: 2rem;
-    font-family: 'Arial Narrow Bold', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
+.homeLink {
+  font-size: 2rem;
+  font-family: "Arial Narrow Bold", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
 }
-.toggleLightButton,.toggleDarkButton{
-    font-size: 3.5rem;
-    border: none;
-    color: white;
-    background-color: rgb(32, 40, 63);
-    cursor: pointer;
+.toggleLightButton,
+.toggleDarkButton {
+  font-size: 3.5rem;
+  border: none;
+  color: white;
+  background-color: rgb(32, 40, 63);
+  cursor: pointer;
 }
-.toggleDarkButton{
-    color: white;
-    background-color: black;
+.toggleDarkButton {
+  color: white;
+  background-color: black;
+}
+@media (max-width: 998px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .homeLink {
+    font-size: 1.5rem;
+  }
+  .topBarContainer {
+    padding-left: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .homeLink {
+    font-size: 1.5rem;
+  }
+  .topBarContainer {
+    padding-left: 1.2rem;
+  }
 }
 /*rgb(89, 165, 232)
 rgb(32, 40, 63)*/
