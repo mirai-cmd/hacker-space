@@ -5,7 +5,7 @@ export default function Sort() {
   const {search,darkTheme}= useContext(NewsContext);
   const dispatch=useContext(NewsDispatchContext);
   const handleDateClick = () => {
-    let sortByDate = [...search].sort((a, b) => b.datePublished.slice(0,9).localeCompare(a.datePublished.slice(0,9)))
+    let sortByDate = [...search].sort((a, b) => b.datePublished.slice(0,10).localeCompare(a.datePublished.slice(0,10)))
     dispatch({type:"SEARCH_ITEMS",payload: sortByDate});
   };
   const handleSourceClick = () => {

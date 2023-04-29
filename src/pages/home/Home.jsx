@@ -26,7 +26,7 @@ export default function Home() {
       },
       headers: {
         "X-BingApis-SDK": "true",
-        "X-RapidAPI-Key": YOUR_API_KEY,
+        "X-RapidAPI-Key":  "3d7082cc5emsh696a274e23386d9p1f27c6jsnc1cf1570245a",
         "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
       },
     };
