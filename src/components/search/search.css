@@ -42,4 +42,7 @@
     border-width: 0.2rem;
     padding: 1.2rem;
   }
+  .searchWrapper{
+    top:14rem;
+  }
 }

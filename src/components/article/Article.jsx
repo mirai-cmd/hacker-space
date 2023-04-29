@@ -11,7 +11,7 @@ export default function Article({item}) {
       <Card
       elevation={4}
         sx={{
-          width: 745,
+          width: {lg:745,sm:200},
           maxHeight: 390,
           display: "flex",
           flexDirection: "column",

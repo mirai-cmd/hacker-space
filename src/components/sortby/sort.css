@@ -50,13 +50,12 @@
     flex-direction: column;
     gap: 3rem;
     margin-left: 3.2rem;
+    margin-top: 20rem;
+    padding: 0rem 5rem 0rem 2rem;
   }
   .contentTitle{
     font-size: 4rem;
-  }
-  .sortContainer{
-    padding: 0rem 5rem 0rem 2rem;
-  }
+  }   
   .sortButton{
     padding: 0.8rem;
     width: 8rem;
@@ -69,12 +68,11 @@
     flex-direction: column;
     gap: 3rem;
     margin-left: 3.2rem;
+    margin-top: 20rem;
+    padding: 0rem 5rem 0rem 2rem;
   }
   .contentTitle{
     font-size: 4rem;
-  }
-  .sortContainer{
-    padding: 0rem 5rem 0rem 2rem;
   }
   .sortButton{
     padding: 0.8rem;

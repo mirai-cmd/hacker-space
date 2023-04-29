@@ -4,10 +4,10 @@ import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import { NewsContext } from "../../context/NewsContext";
 import ReactPaginate from "react-paginate";
-import './articles.css';
+import "./articles.css";
 export default function Articles() {
   const [pageNum, setPageNum] = useState(0);
-  const { search,loading } = useContext(NewsContext);
+  const { search, loading } = useContext(NewsContext);
   const articlesPerPage = 10;
   const visited = pageNum * articlesPerPage;
   const pageCount = Math.ceil(search.length / articlesPerPage);
@@ -16,11 +16,15 @@ export default function Articles() {
   const handlePageChange = ({ selected }) => {
     setPageNum(selected);
   };
-  return (
-    loading? <div className="loading">Loading...</div>:(<Container
+  return loading ? (
+    <div className="loading">Loading...</div>
+  ) : (
+    <Container
+      className="articlesContainer"
       sx={{
         padding: "1.5rem",
-        margin: "5rem 0 0 12rem",
+        marginTop:"5rem",
+        marginLeft:{lg:"12rem"}
       }}
     >
       <ReactPaginate
@@ -38,23 +42,25 @@ export default function Articles() {
       <Grid
         container
         columnSpacing={{ xs: 1, sm: 2, md: 7 }}
-        rowSpacing={{ xs: 1, sm: 2, md: 5 }}
+        rowSpacing={{ xs: 5, sm: 2, md: 5 }}
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          
         }}
       >
         {articles.map((item) => {
           return (
-            <Grid item key={item.name}>
-              <Article item={item} />
+            <Grid item key={item.name} >
+              <Article
+                item={item}
+              />
             </Grid>
           );
         })}
       </Grid>
     </Container>
-  )
-  )
+  );
 }
