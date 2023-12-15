@@ -53,7 +53,7 @@ export default function Articles() {
       >
         {articles.map((item) => {
           return (
-            <Grid item key={item.name} >
+            <Grid item key={item.title} >
               <Article
                 item={item}
               />

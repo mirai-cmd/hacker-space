@@ -5,7 +5,7 @@ import Articles from "../../components/articles/Articles";
 import Header from "../../components/header/Header";
 import Sort from "../../components/sortby/Sort";
 import { reducer } from "../../reducers/reducer";
-import { NewsContext, NewsDispatchContext } from "../../context/NewsContext";
+import { NewsContext } from "../../context/NewsContext";
 import './home.css';
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, {
@@ -16,43 +16,38 @@ export default function Home() {
   });
   const fetchAPI = async () => {
     const options = {
-      method: "GET",
-      url: "https://bing-news-search1.p.rapidapi.com/news/search",
+      method: 'GET',
+      url: 'https://real-time-news-data.p.rapidapi.com/search',
       params: {
-        q: "hackers AND hack AND cybersecurity AND cybercrime AND passwords AND hacking AND vulnerability AND darkweb",
-        safeSearch: "Off",
-        textFormat: "Raw",
-        count: "100",
+        query: 'hackers',
+        lang: 'en'
       },
       headers: {
-        "X-BingApis-SDK": "true",
-        "X-RapidAPI-Key":  "3d7082cc5emsh696a274e23386d9p1f27c6jsnc1cf1570245a",
-        "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
-      },
+        'X-RapidAPI-Key': '3d7082cc5emsh696a274e23386d9p1f27c6jsnc1cf1570245a',
+        'X-RapidAPI-Host': 'real-time-news-data.p.rapidapi.com'
+      }
     };
-
-    await axios
-      .request(options)
-      .then(function (response) {
-        dispatch({ type: "FETCH_SUCCESS", payload: response.data.value });
-        dispatch({ type: "SEARCH_ITEMS", payload: response.data.value });
-        dispatch({type:"LOADING"});
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    //
+    try{
+      const response = await axios.request(options);
+      dispatch({ type: "FETCH_SUCCESS", payload: response.data.data });
+      dispatch({ type: "SEARCH_ITEMS", payload: response.data.data });
+      dispatch({type:"LOADING"});
+    }
+    catch(error) {
+      console.error(error.message);
+    }
   };
   useEffect(() => {
     fetchAPI();
   }, []);
+
   return (
-    <NewsContext.Provider value={state}>
-      <NewsDispatchContext.Provider value={dispatch}>
+    <NewsContext.Provider value={state} dispatch={dispatch}>
         <TopBar />
         <Header />
         <Sort />
         <Articles />
-      </NewsDispatchContext.Provider>
     </NewsContext.Provider>
   );
 }

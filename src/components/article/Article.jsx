@@ -19,24 +19,24 @@ export default function Article({item}) {
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" fontSize={15}>
-            {item.name}
+            {item.title}
           </Typography>
           <Typography gutterBottom variant="h5" component="div" fontSize={12}>
-            {item.provider[0].name} | {item.datePublished}
+            {item.published_datetime_utc}
           </Typography>
-          <Typography
+          {/* <Typography
             variant="p"
             color="text.secondary"
             fontSize={13}
           >
             {item.description}
-          </Typography>
+          </Typography> */}
         </CardContent>
         <CardActions>
           <Button
             sx={{ marginBottom: "4.2rem" }}
             variant="text"
-            href={item.url}
+            href={item.link}
             size="medium"
           >
             Learn More
