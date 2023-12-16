@@ -10,7 +10,7 @@ export default function Search() {
   function handleSearchChange(e) {
     if (e.target.value === "")
       return dispatch({ type: "SEARCH_ITEMS", payload: items });
-    const results = items.filter((item) => item.name.toLowerCase().includes(e.target.value));
+    const results = items.filter((item) => item.title.toLowerCase().includes(e.target.value));
     dispatch({ type: "SEARCH_ITEMS", payload: results });
   }
   
